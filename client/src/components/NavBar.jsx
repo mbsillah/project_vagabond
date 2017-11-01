@@ -22,10 +22,6 @@ const List = styled.div`
     }
 
 
-
-
-
-
 /* 
 ul {
     display: flex;   

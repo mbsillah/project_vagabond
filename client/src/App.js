@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import NavBar from './components/NavBar'
 import axios from "axios"
 import HomePage from "./components/HomePage"
+import City from "./components/City"
 
 
 const SplashPage = styled.div`
@@ -46,6 +47,8 @@ class App extends Component {
       <SplashPage>Project Vagabond</SplashPage>
       <Switch>
         <Route exact path="/home" render={HomePageComponent} />
+        <Route exact path="/cities/:id" component={City} />
+
       </Switch>
       </div>
       </Router>

@@ -17,3 +17,9 @@ cities << City.create(
     photo_url: "https://www.atlantaga.gov/Home/ShowImage?id=3272&t=636335665341170000"
 )
 
+cities << City.create(
+    name: "Portland",
+    description: "only hipsters allowed.",
+    population: 2000000,
+    photo_url: "https://www.atlantaga.gov/Home/ShowImage?id=3272&t=636335665341170000"
+)
