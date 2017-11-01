@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components'
+import NavBar from './components/NavBar'
+
+
 
 const SplashPage = styled.div`
   text-align: center;
@@ -19,10 +23,14 @@ const SplashPage = styled.div`
 class App extends Component {
   render() {
     return (
-      <SplashPage>
-        <h1 className="title">Project Vagabond: </h1>
-        <img src="http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg" alt="passport"/>
-      </SplashPage>
+      <Router>
+        <div> 
+      <NavBar />
+      <Switch>
+      <SplashPage>Project Vagabond </SplashPage>
+      </Switch>
+        </div>
+      </Router>
 
     );
   }
