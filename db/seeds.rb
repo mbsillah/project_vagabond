@@ -13,6 +13,7 @@ cities = []
 cities << City.create(
     name: "Atlanta",
     description: "Capital of the South. ATL. Home of Coke, Chick-fil-A, and mediocre sports. Once burned by Sherman - rude.",
-    population: 472522
+    population: 472522,
+    photo_url: "https://www.atlantaga.gov/Home/ShowImage?id=3272&t=636335665341170000"
 )
 
