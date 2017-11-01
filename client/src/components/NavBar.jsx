@@ -8,6 +8,8 @@ const List = styled.div`
     background-color: tan;
     opacity: .8;
     margin-bottom: 0px;
+    padding-bottom: 2px;
+    letter-spacing: 2px;
     ul {
         display: flex;
         justify-content: space-around;
@@ -16,7 +18,7 @@ const List = styled.div`
         padding-bottom: 2px;
         font-family: 'Cabin Condensed', sans-serif;
         margin-top: 0px;
-        margin-bottom: 0px
+        margin-bottom: 0px;
     }
 
 
