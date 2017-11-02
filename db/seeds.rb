@@ -40,3 +40,4 @@ users << User.create(
     username: "ebhinch",
     current_city: "New York"
 )
+
