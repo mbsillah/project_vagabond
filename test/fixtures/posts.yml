@@ -3,9 +3,9 @@
 one:
   title: MyString
   text: MyString
-  cities: one
+  city: one
 
 two:
   title: MyString
   text: MyString
-  cities: two
+  city: two

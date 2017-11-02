@@ -8,36 +8,43 @@
 
 City.destroy_all
 User.destroy_all
+Post.destroy_all
 
 cities = []
 users = []
+posts = []
 
-cities << City.create(
+atlanta = City.create(
     name: "Atlanta",
     description: "Capital of the South. ATL. Home of Coke, Chick-fil-A, and mediocre sports. Once burned by Sherman - rude.",
     population: 472522,
     photo_url: "https://www.atlantaga.gov/Home/ShowImage?id=3272&t=636335665341170000"
 )
 
-cities << City.create(
+portland = City.create(
     name: "Portland",
     description: "only hipsters allowed.",
     population: 639863,
     photo_url: "http://bouchon-portland.com/wp-content/uploads/2017/01/portland-oregon.jpg"
 )
 
-users << User.create(
+jonathan = User.create(
     username: "lil.bow.wow",
     current_city: "Atlanta"
 )
 
-users << User.create(
+musa = User.create(
     username: "silla",
     current_city: "Philadelphia"
 )
 
-users << User.create(
+erica = User.create(
     username: "ebhinch",
     current_city: "New York"
 )
 
+atlPostOne = Post.create(
+    title: "Peace Up",
+    text: "A-Town Down",
+    city_id: atlanta.id
+)

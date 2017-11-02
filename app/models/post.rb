@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  belongs_to :cities
+  belongs_to :city
 end
