@@ -29,13 +29,9 @@ const CityCard = styled.div`
     margin-left: 10px;
     margin-right: 10px;
     opacity: .9;
-
-
     img {
         height: 80%
-
     }
-
     a {
         padding-bottom: 10px;
     }
