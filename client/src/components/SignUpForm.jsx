@@ -4,18 +4,13 @@ import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const SignUpFormStyles = styled.div`
-
     h2{
         text-align: center;
     }
     form {
         text-align: center;
     }
-
-
 `
-
-
 
 class SignUpForm extends Component {
     state = {
@@ -40,12 +35,12 @@ class SignUpForm extends Component {
             'user': this.state.newUser
         })
         console.log(res.data)
-        this.setState({ redirectToHomePage: true, newUserId: res.data._id})
+        this.setState({ redirectToHomePage: true, newUserId: res.data.id})
     }
 
     render() {
         if (this.state.redirectToHomePage) {
-            return <Redirect to={`/users/${this.state.newUserId}`} />
+            return <Redirect to={'/home'} />
         }
         return (
             <SignUpFormStyles>
