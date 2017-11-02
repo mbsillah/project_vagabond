@@ -6,9 +6,20 @@ import axios from "axios"
 import HomePage from "./components/HomePage"
 import City from "./components/City"
 import LogInPage from "./components/LogInPage"
+import SplashPage from "./components/SplashPage"
+import { injectGlobal } from 'styled-components'
 
+injectGlobal`
+  body {
+    background-image: url("http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg"); 
+    background-position: center;
 
-const SplashPage = styled.div`
+    background-size: cover;
+    background-attachment: fixed;
+}
+`
+
+const TitleText = styled.div`
   text-align: center;
   font-family: 'Ranchers', cursive;  
   font-size: 28px;
@@ -48,8 +59,8 @@ class App extends Component {
       <Router>
         <div>
         <NavBar />
-      <SplashPage>Project Vagabond</SplashPage>
       <Switch>
+        <Route exact path="/" render={SplashPage} />
         <Route exact path="/home" render={HomePageComponent} />
         <Route exact path="/cities/:id" component={City} />
         <Route exact path="/login" component={LogInPage} />
