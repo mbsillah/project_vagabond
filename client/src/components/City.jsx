@@ -9,9 +9,15 @@ const CityName = styled.div `
     letter-spacing: 2px;
     text-shadow: 1px 1px yellow;
     padding-top: 25px;
-
 `
+const CityDetails = styled.div `
+font-family: 'Cabin Condensed', sans-serif;
 
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 25px;
+`
 
 class City extends Component {
 
@@ -33,11 +39,21 @@ async componentWillMount(){
     }
 }
 
+// const population = {this.state.city.population}
 
     render() {
+
+    
+
         return (
             <div>
                 <CityName>Welcome to {this.state.city.name}</CityName>
+                <CityDetails>
+                <div>Population: {this.state.city.population}</div>
+                <div>About: {this.state.city.description}</div>
+                <img src={this.state.city.photo_url} />
+
+                </CityDetails>
             </div>
         );
     }
