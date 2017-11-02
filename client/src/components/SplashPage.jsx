@@ -4,25 +4,18 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const SplashBackground = styled.div`
-    background-image: url("http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg");
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    padding-top: 0px;
-    margin-top: 0px;
+    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     font-family: 'Ranchers', cursive;
+    font-family: 'Rammetto One', cursive;
      text-align: center;
 `
 
 const SplashHeader = styled.div`
-    font-size: 38px;
+    font-size: 30px;
 `
 
 const SplashLink = styled.div`
-    font-size: 24px;
+    font-size: 20px;
 `
 
 const SplashPage = (props) => {

@@ -7,7 +7,17 @@ import HomePage from "./components/HomePage"
 import City from "./components/City"
 import LogInPage from "./components/LogInPage"
 import SplashPage from "./components/SplashPage"
+import { injectGlobal } from 'styled-components'
 
+injectGlobal`
+  body {
+    background-image: url("http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg"); 
+    background-position: center;
+
+    background-size: cover;
+    background-attachment: fixed;
+}
+`
 
 const TitleText = styled.div`
   text-align: center;

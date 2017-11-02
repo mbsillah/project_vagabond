@@ -9,8 +9,7 @@ const CityContainer = FlexRow.extend`
     margin-bottom: 10px;
     margin-left: 15px;
     margin-right: 15px;
-    font-family: 'Ranchers', cursive;
-
+    font-family: 'Rammetto One', cursive;
 `
 
 const CityCard = styled.div`

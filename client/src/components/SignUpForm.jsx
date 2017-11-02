@@ -9,8 +9,23 @@ const SignUpFormStyles = styled.div`
     }
     form {
         text-align: center;
+        font-size:22px;
     }
 `
+
+const LoginSection = styled.div`
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     background-color: white;
+     opacity: .8;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     margin-top: 25px;
+     margin-left: 15px;
+     margin-right: 15px;
+     margin-bottom: 10px; 
+     font-size: 24px; 
+`
+
 
 class SignUpForm extends Component {
     state = {
@@ -44,7 +59,10 @@ class SignUpForm extends Component {
         }
         return (
             <SignUpFormStyles>
-            <h2> Sign-Up </h2>
+            <LoginSection>
+                <h2> Sign-Up </h2>
+   
+
             <form onSubmit={this.handleSubmit}>
             <div>
             <label htmlFor="username">Username </label>
@@ -56,6 +74,9 @@ class SignUpForm extends Component {
             </div>
             <button> Sign Up </button>
             </form>
+
+            </LoginSection>
+
             </SignUpFormStyles>
         );
     }

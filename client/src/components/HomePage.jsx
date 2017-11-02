@@ -4,21 +4,29 @@ import CityList from "./CityList"
 import styled from "styled-components"
 
 const HomeBackground = styled.div`
-    background-image: url("http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg");
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    padding-top: 0px;
+
+    font-family: 'Rammetto One', cursive;
+`
+
+const WelcomeText = styled.h1`
+    font-size: 50px;
+    text-shadow: 2px 2px white;
+    text-align: center;
     margin-top: 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-top: 30px;
+`
+
+const CityText = styled.h2`
+    font-size: 40px;
+    text-align: center;
+     text-shadow: 2px 2px white;
 `
 
 const HomePage = (props) => {
     return (
         <HomeBackground>
-        
+        <WelcomeText>Welcome to Project Vagabond </WelcomeText>
+        <CityText>View our portfolio of cities below </CityText>
         <CityList cities={props.cities}/>
             
         </HomeBackground>

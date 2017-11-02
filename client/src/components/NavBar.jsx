@@ -12,14 +12,14 @@ const List = styled.div`
     margin-right: 0px;
     margin-left: 0px;
     padding-top: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     ul {
         display: flex;
         justify-content: space-around;
         list-style-type: none;
         padding-top: 2px;
         padding-bottom: 2px;
-        font-family: 'Ranchers', cursive;
+        font-family: 'Rammetto One', cursive;
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 22px;
