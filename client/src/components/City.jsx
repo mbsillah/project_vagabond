@@ -118,7 +118,7 @@ toggleShowForm = () => {
                 <div>Population: {this.state.city.population}</div>
                 <div>About: {this.state.city.description}</div>
                 <img src={this.state.city.photo_url} />
-                </CityDetails>
+              
                 {this.state.posts.map(post => (
                     <div key={post.id}>
                         <h4>{post.title}</h4>
@@ -129,6 +129,8 @@ toggleShowForm = () => {
                 ))}
                 <button onClick={this.toggleShowForm}>Add New Post</button>
                 {this.state.showForm ? <NewPost pushPosts={this.pushPosts} id={this.props.match.params.id} handleSubmit={this.handleSubmit} /> : null}
+                </CityText>
+            </CityBody>
             </div>
         );
     }
