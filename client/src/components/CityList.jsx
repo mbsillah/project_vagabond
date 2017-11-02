@@ -32,7 +32,8 @@ const CityCard = styled.div`
 
 
     img {
-     
+        height: 80%
+
     }
 
     a {
