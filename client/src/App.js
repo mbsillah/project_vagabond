@@ -6,9 +6,10 @@ import axios from "axios"
 import HomePage from "./components/HomePage"
 import City from "./components/City"
 import LogInPage from "./components/LogInPage"
+import SplashPage from "./components/SplashPage"
 
 
-const SplashPage = styled.div`
+const TitleText = styled.div`
   text-align: center;
   font-family: 'Ranchers', cursive;  
   font-size: 28px;
@@ -48,8 +49,9 @@ class App extends Component {
       <Router>
         <div>
         <NavBar />
-      <SplashPage>Project Vagabond</SplashPage>
+      <TitleText>Project Vagabond</TitleText>
       <Switch>
+        <Route exact path="/" render={SplashPage} />
         <Route exact path="/home" render={HomePageComponent} />
         <Route exact path="/cities/:id" component={City} />
         <Route exact path="/login" component={LogInPage} />
