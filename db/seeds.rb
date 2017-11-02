@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 City.destroy_all
+User.destroy_all
 
 cities = []
+users = []
 
 cities << City.create(
     name: "Atlanta",
@@ -22,4 +24,19 @@ cities << City.create(
     description: "only hipsters allowed.",
     population: 639863,
     photo_url: "http://bouchon-portland.com/wp-content/uploads/2017/01/portland-oregon.jpg"
+)
+
+users << User.create(
+    username: "lil.bow.wow",
+    current_city: "Atlanta"
+)
+
+users << User.create(
+    username: "silla",
+    current_city: "Philadelphia"
+)
+
+users << User.create(
+    username: "ebhinch",
+    current_city: "New York"
 )
