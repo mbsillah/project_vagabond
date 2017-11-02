@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import axios from "axios"
 import HomePage from "./components/HomePage"
 import City from "./components/City"
+import LogInPage from "./components/LogInPage"
 
 
 const SplashPage = styled.div`
@@ -24,7 +25,8 @@ const SplashPage = styled.div`
 class App extends Component {
   // setting initial state
   state = {
-  cities: []
+  cities: [],
+  users: []
 }
 
   // getting list of cities and setting state
@@ -32,6 +34,7 @@ class App extends Component {
     try {
       const response = await axios.get("/api/cities")
       this.setState({cities: response.data})
+      const userResponse = await axios.get("/api/users")
 
     } catch(error) {
       console.log(error)
@@ -49,6 +52,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/home" render={HomePageComponent} />
         <Route exact path="/cities/:id" component={City} />
+        <Route exact path="/login" component={LogInPage} />
 
       </Switch>
       </div>
