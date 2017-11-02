@@ -12,7 +12,7 @@ const CityBackground = styled.div `
         background-repeat: no-repeat;
         padding-top: 0px;
         margin-top: 0px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     }
   `
@@ -57,8 +57,6 @@ async componentWillMount(){
         console.log(error)
     }
 }
-
-// const population = {this.state.city.population}
 
     render() {
 
