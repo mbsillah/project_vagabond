@@ -49,7 +49,6 @@ class App extends Component {
       <Router>
         <div>
         <NavBar />
-      <TitleText>Project Vagabond</TitleText>
       <Switch>
         <Route exact path="/" render={SplashPage} />
         <Route exact path="/home" render={HomePageComponent} />
