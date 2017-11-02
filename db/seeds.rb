@@ -48,3 +48,15 @@ atlPostOne = Post.create(
     text: "A-Town Down",
     city_id: atlanta.id
 )
+
+atlPostTwo = Post.create(
+    title: "Rise Up",
+    text: "but not too hard...just for first half. sit down for second"
+    city_id = atlanta.id
+)
+
+portlandPostOne = Post.create(
+    title: "Portlandia",
+    text: "There's more to our town than a stupid show.",
+    city_id = portland.id
+)

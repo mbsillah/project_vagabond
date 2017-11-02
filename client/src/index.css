@@ -2,7 +2,7 @@ body {
   /* background-color: lightblue; */
   background-image: url("http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg");
   
-  width: 100%;
+  width: 100vw;
   background-size: cover;
   background-position: center;
   height: 100vh;
