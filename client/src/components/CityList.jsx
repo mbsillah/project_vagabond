@@ -10,7 +10,6 @@ const CityContainer = FlexRow.extend`
     margin-left: 15px;
     margin-right: 15px;
     font-family: 'Rammetto One', cursive;
-    opacity: .9;
 
 `
 
@@ -25,20 +24,21 @@ const CityCard = styled.div`
     justify-content: space-around;
     float: left;
     padding: 20px 10px 15px 10px;
-    background: #eee;
+    background: rgba(216, 212, 212, 1);
     border: 1px solid #fff;
     -moz-box-shadow: 0px 2px 15px #333;
     position: relative;
-    -webkit-transform: rotate(-8deg);
+    -webkit-transform: rotate(${props => props.rotationDegrees}deg);
+    
     -moz-transform: rotate(-8deg);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: white;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
-    opacity: .9;
+    
     img {
-        height: 80%
+        height: 80%;
+        filter: saturate(40%) grayscale(30%);
     }
     a {
         padding-bottom: 10px;
@@ -52,10 +52,18 @@ const CityList = (props) => {
     return (
         <CityContainer>
             {
-                props.cities.map((city) => {
+                props.cities.map((city, index) => {
+
+                var num = Math.random()*30
+                
+                if (index % 2 === 0 ) {
+                    num = num * -1
+                }
+
+                    
                 return (
                     
-                        <CityCard>
+                        <CityCard rotationDegrees={num}>
                             <img src={city.photo_url} />
                             <br />
                             <Link to={`/cities/${city.id}`}> {city.name} </Link>
