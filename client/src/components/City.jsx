@@ -41,7 +41,7 @@ const CityName = styled.div `
 
 const CityBody = styled.div `
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          font-family: 'Cabin Condensed', sans-serif;
+    font-family: 'Cabin Condensed', sans-serif;
     font-size: 30px;
     text-align: center;
     letter-spacing: 2px;
