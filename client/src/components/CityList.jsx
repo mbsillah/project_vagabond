@@ -54,7 +54,7 @@ const CityList = (props) => {
             {
                 props.cities.map((city, index) => {
 
-                var num = Math.random()*30
+                var num = Math.random()*25
                 
                 if (index % 2 === 0 ) {
                     num = num * -1
