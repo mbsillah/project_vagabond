@@ -20,6 +20,6 @@ cities << City.create(
 cities << City.create(
     name: "Portland",
     description: "only hipsters allowed.",
-    population: 2000000,
-    photo_url: "https://www.atlantaga.gov/Home/ShowImage?id=3272&t=636335665341170000"
+    population: 639863,
+    photo_url: "http://bouchon-portland.com/wp-content/uploads/2017/01/portland-oregon.jpg"
 )

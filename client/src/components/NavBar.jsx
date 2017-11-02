@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const List = styled.div`
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: tan;
+    background-color: #f9a84a;
     opacity: .8;
     margin-bottom: 0px;
     padding-bottom: 2px;
@@ -16,7 +16,7 @@ const List = styled.div`
         list-style-type: none;
         padding-top: 2px;
         padding-bottom: 2px;
-        font-family: 'Cabin Condensed', sans-serif;
+        font-family: 'Ranchers', cursive;
         margin-top: 0px;
         margin-bottom: 0px;
     }
