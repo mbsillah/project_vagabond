@@ -49,6 +49,20 @@ milan = City.create(
     photo_url: "https://www.flybe.com/cheap-flights/milan/milan-overview-16x9.jpg"
 )
 
+london = City.create(
+    name: "London",
+    description: "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times",
+    population: 8788000,
+    photo_url: "https://www.laoistoday.ie/wp-content/uploads/2017/10/london.png"
+)
+
+sanFran = City.create(
+    name: "San Fransico",
+    description: "San Francisco, in northern California, is a hilly city on the tip of a peninsula surrounded by the Pacific Ocean and San Francisco Bay.",
+    population: 864816,
+    photo_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjW8b_u5KLXAhWKOSYKHeqdBzcQjRwIBw&url=http%3A%2F%2Fwww.travelandleisure.com%2Ftravel-guide%2Fsan-francisco&psig=AOvVaw3qov-ui9eLEY2NrPCAE7CI&ust=1509811655720240"
+)
+
 jonathan = User.create(
     username: "lil.bow.wow",
     current_city: "Atlanta"
