@@ -17,7 +17,6 @@ const LoginContainer = styled.div`
 const LoginBox = styled.div`
   position: relative;
   margin: 5% auto;
-  width: 600px;
   height: 250px;
   background: white;
   border-radius: 2px;
