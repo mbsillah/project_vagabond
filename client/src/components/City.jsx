@@ -33,6 +33,7 @@ const CityImageBanner = styled.div`
         justify-content: center;
         margin-left: 10px;
         margin-right: 10px;
+        margin-bottom: 20px;
   `
 
 const CityName = styled.div`
@@ -56,6 +57,11 @@ const CityBody = styled.div`
     }
   
 `
+
+  const NewPostForm = styled.div`
+    
+  `
+
 
 
 
@@ -123,12 +129,13 @@ class City extends Component {
                 <p>Population: {this.state.city.population}</p>
                 <p>About: {this.state.city.description}</p>
              
+            
             <button onClick={this.toggleShowForm}>Add New Post </button>
                </CityBody>
-                        </CityContainer>
+                    </CityContainer>
 
                 {this.state.showForm ? <NewPost pushPosts={this.pushPosts} id={this.props.match.params.id} handleSubmit={this.handleSubmit} /> : null}
-          
+              
                 {this.state.posts.map(post => (
                     <PostCard deletePost={this.deletePost} key={post._id} post={post} city={this.state.city}/>
                 ))}
