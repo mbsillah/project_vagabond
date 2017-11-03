@@ -4,27 +4,15 @@ import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const SignUpFormStyles = styled.div`
-    h2{
+    h2, form {
+        padding-top: 5px;
         text-align: center;
-    }
-    form {
-        text-align: center;
-        font-size:22px;
+        font-size: 20px;
+        font-family: 'Cabin Condensed', sans-serif;
     }
 `
 
-const LoginSection = styled.div`
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     background-color: white;
-     opacity: .8;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     margin-top: 25px;
-     margin-left: 15px;
-     margin-right: 15px;
-     margin-bottom: 10px; 
-     font-size: 24px; 
-`
+
 
 
 class SignUpForm extends Component {
@@ -59,7 +47,7 @@ class SignUpForm extends Component {
         }
         return (
             <SignUpFormStyles>
-            <LoginSection>
+         
                 <h2> Sign-Up </h2>
    
 
@@ -75,7 +63,7 @@ class SignUpForm extends Component {
             <button> Sign Up </button>
             </form>
 
-            </LoginSection>
+     
 
             </SignUpFormStyles>
         );

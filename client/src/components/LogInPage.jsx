@@ -2,38 +2,73 @@ import React, { Component } from 'react';
 import SignUpForm from "./SignUpForm"
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { FlexRow } from "../styled-components/FlexContainers";
+import { FlexColumn } from "../styled-components/FlexContainers";
 import styled from "styled-components"
 
-const PageBackground = styled.div`
+const LoginContainer = FlexRow.extend`
     
-    padding-top: 0px;
-    margin-top: 0px;
-    font-family: 'Rammetto One', cursive;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-`
-const LoginHeaderText = styled.h2`
-    font-size: 30px;
-    text-align: center;
-     text-shadow: 2px 2px white;
-    margin-top: 0px;
+     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.29);
+     width: 60%;
+     height: 400px;
+     margin: 20px auto;
+     align-items: center;
+     justify-content: center;
+      background-color:rgba(244, 245, 247,.7);
 `
 
-const LoginSection = styled.div`
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     background-color: white;
-     opacity: .8;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     margin-left: 15px;
-     margin-top: 15px;
-     margin-right: 15px;
-     margin-bottom: 10px;  
+
+
+const SignUpSection = FlexColumn.extend` 
+    top: 0;
+    right: 0;
+    background-color: rgba(249, 168, 74, .5);
+    height: 100%;
+    width: 100%;
+    padding-right: 0px;
+    margin-right: 0px;
 `
 
-const UserNameText = styled.h3`
-    text-align: center;
-    font-size: 30px;
+const SignInSection = FlexColumn.extend`
+    top: 0;
+    left: 0;
+   background-color: rgba(255,255,224, .5);
+   height: 100%;
+   width: 100%;
 `
+
+const SectionText = styled.h2`
+    font-size: 20px;
+    font-family: 'Cabin Condensed', sans-serif;
+    padding-top: 5px;
+    text-align: center;
+`
+
+const UsernameList = styled.div`
+    padding-top: 10px;
+    a:hover {
+        font-size: 22px;
+    }
+    div {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+`
+
+const OrCircle = styled.div` 
+  position: absolute;
+  top: 45%;
+  right: 48%;
+  width: 40px;
+  height: 40px;
+  background-color: #c3cbd8;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+    font-family: 'Cabin Condensed', sans-serif;
+`
+
 
 class LogInPage extends Component {
     state = {
@@ -56,16 +91,25 @@ getAllUsers = async () => {
 
     render() {
         return (
-            <PageBackground>
-            <LoginSection>
-            <LoginHeaderText>Already have an account? Select your username from list below: </LoginHeaderText>
-            <UserNameText>
+            <LoginContainer>
+       
+           <SignInSection>
+           
+           <SectionText>Already have an account? Select your username from list below: 
+            <UsernameList>
             {this.state.users.map((user) => {
                 return <div><Link key={user.id} to={'/home'}> {user.username} </Link></div>
-            })}</UserNameText>
-            </LoginSection>
+            })}
+            </UsernameList>
+            </SectionText>
+            </SignInSection>
+            <SignUpSection>
+            <SectionText>
             <SignUpForm />
-            </PageBackground>
+            </SectionText>
+            </SignUpSection>
+           <OrCircle>OR</OrCircle>
+            </LoginContainer>
         );
     }
 }
