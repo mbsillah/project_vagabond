@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = City.find(params[:city_id]).posts
+        @city = City.find(params[:city_id])
+        @posts = @city.posts.order('created_at Desc')
         render json: @posts  
     end
 
