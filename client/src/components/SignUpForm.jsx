@@ -3,29 +3,24 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
-const SignUpFormStyles = styled.div`
-    h2{
-        text-align: center;
-    }
-    form {
-        text-align: center;
-        font-size:22px;
-    }
+const SectionText = styled.h2`
+    font-size: 20px;
+    font-family: 'Cabin Condensed', sans-serif;
+`
+const FormText = styled.h3`
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 20px;
+    padding-top: 10px;
 `
 
-const LoginSection = styled.div`
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     background-color: white;
-     opacity: .8;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     margin-top: 25px;
-     margin-left: 15px;
-     margin-right: 15px;
-     margin-bottom: 10px; 
-     font-size: 24px; 
-`
+const SignUpButton = styled.button`
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #c3cbd8;
 
+
+`
 
 class SignUpForm extends Component {
     state = {
@@ -58,26 +53,26 @@ class SignUpForm extends Component {
             return <Redirect to={'/home'} />
         }
         return (
-            <SignUpFormStyles>
-            <LoginSection>
-                <h2> Sign-Up </h2>
+            <div>
+          
+                <SectionText> Sign-Up </SectionText>
    
-
+            <FormText>
             <form onSubmit={this.handleSubmit}>
             <div>
-            <label htmlFor="username">Username </label>
+            <label htmlFor="username">Username: </label>
             <input onChange={this.handleChange} name="username" type="text" value={this.state.newUser.username} />
             </div>
             <div>
-            <label htmlFor="current_city">Current City </label>
+            <label htmlFor="current_city">Current City: </label>
             <input onChange={this.handleChange} name="current_city" type="text" value={this.state.newUser.current_city} />
             </div>
-            <button> Sign Up </button>
+            <SignUpButton> Sign Up </SignUpButton>
             </form>
+            </FormText>
+          
 
-            </LoginSection>
-
-            </SignUpFormStyles>
+            </div>
         );
     }
 }

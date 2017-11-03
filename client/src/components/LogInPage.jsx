@@ -4,36 +4,95 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
 
-const PageBackground = styled.div`
-    
-    padding-top: 0px;
-    margin-top: 0px;
-    font-family: 'Rammetto One', cursive;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-`
-const LoginHeaderText = styled.h2`
-    font-size: 30px;
-    text-align: center;
-     text-shadow: 2px 2px white;
-    margin-top: 0px;
+const LoginContainer = styled.div`
+     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.29);
+     height: 450px;
+     width: 60%;
+     text-align: center;
+     margin-left: 20%;
+     margin-right: 20%;
+     background-color:rgba(244, 245, 247,.7);
 `
 
-const LoginSection = styled.div`
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     background-color: white;
-     opacity: .8;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     margin-left: 15px;
-     margin-top: 15px;
-     margin-right: 15px;
-     margin-bottom: 10px;  
+const LoginBox = styled.div`
+  position: relative;
+  margin: 5% auto;
+  width: 600px;
+  height: 250px;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.29);
 `
 
-const UserNameText = styled.h3`
-    text-align: center;
-    font-size: 30px;
+const IntroTextBox = styled.div`
+    position: relative;
+    margin: 5% auto;
+    width: 600px;
+
 `
+
+const SignUpSection = styled.div`
+    position: absolute;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    background-color: rgba(249, 168, 74, .5);
+`
+
+const SignInSection = styled.div`
+    position: absolute;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background-color: rgba(255,255,224, .5);
+`
+
+const IntroText = styled.div`
+    font-size: 28px;
+    text-align: center;
+    font-family: 'Cabin Condensed', sans-serif;
+    opacity: .9;
+    padding-top: 10px;
+   
+`
+
+const SectionText = styled.h2`
+    font-size: 20px;
+    font-family: 'Cabin Condensed', sans-serif;
+`
+
+const UsernameList = styled.div`
+    padding-top: 10px;
+    a:hover {
+        font-size: 22px;
+    }
+    div {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+`
+
+const OrCircle = styled.div` 
+  position: absolute;
+  top: 45%;
+  right: 48%;
+  width: 40px;
+  height: 40px;
+  background-color: #c3cbd8;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+    font-family: 'Cabin Condensed', sans-serif;
+`
+
+
 
 class LogInPage extends Component {
     state = {
@@ -56,16 +115,27 @@ getAllUsers = async () => {
 
     render() {
         return (
-            <PageBackground>
-            <LoginSection>
-            <LoginHeaderText>Already have an account? Select your username from list below: </LoginHeaderText>
-            <UserNameText>
-            {this.state.users.map((user) => {
-                return <div><Link key={user.id} to={'/home'}> {user.username} </Link></div>
-            })}</UserNameText>
-            </LoginSection>
-            <SignUpForm />
-            </PageBackground>
+            <LoginContainer>
+           
+            <IntroTextBox><IntroText> Please log in or create an account before exploring Project Vagabond </IntroText></IntroTextBox>
+            <LoginBox>
+                <SignInSection>
+                    <SectionText> Select username below: 
+                    <UsernameList>
+                    {this.state.users.map((user) => {
+                        return <div><Link key={user.id} to={'/home'}> {user.username} </Link></div>
+                    })}
+                    </UsernameList>
+                    </SectionText>
+                </SignInSection>
+
+                <SignUpSection>
+                <SignUpForm />
+                </SignUpSection>
+            </LoginBox>
+            <OrCircle>OR</OrCircle>
+            </LoginContainer>
+        
         );
     }
 }
