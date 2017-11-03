@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import ConfirmationAlert from './ConfirmationAlert'
 import moment from 'moment'
+import { FlexRow } from "../styled-components/FlexContainers";
 
 
 const CityImageBanner = styled.div`
