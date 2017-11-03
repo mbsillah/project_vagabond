@@ -3,17 +3,24 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 class EditPost extends Component {
-  
-              
-    
-    
+
+
+
+
     state = {
         post: {
-        title: "",
-        text: ""
+            title: "",
+            text: ""
         },
         redirectToCityPage: false
-        
+
+    }
+
+    async componentWillMount() {
+        const cityId = this.props.match.params.city_id
+        const postId = this.props.match.params.id
+        const res = await axios.get(`/api/cities/${cityId}/posts/${postId}`)
+        this.setState({ post: res.data })
     }
 
     handleChange = (event) => {
@@ -30,8 +37,8 @@ class EditPost extends Component {
         const response = await axios.patch(`/api/cities/${cityId}/posts/${postId}`, {
             post: this.state.post
         })
-        this.setState({redirectToCityPage: true, post: response.data})        
-        
+        this.setState({ redirectToCityPage: true, post: response.data })
+
     }
 
 
@@ -46,7 +53,7 @@ class EditPost extends Component {
         return (
             <div>
                 <h1>Edit Current Post</h1>
-              <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="title">Title: </label>
                         <input onChange={this.handleChange} name="title" type="text" value={this.state.post.title} />
@@ -56,7 +63,7 @@ class EditPost extends Component {
                         <textarea onChange={this.handleChange} name="text" type="text" value={this.state.post.text} />
                     </div>
                     <button>Save Post</button>
-                    </form>
+                </form>
             </div>
         );
     }
