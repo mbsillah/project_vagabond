@@ -55,7 +55,10 @@ const PostCard = styled.div`
     flex-direction: column;
     // width: 30%;
     font-size: 20px;
-    width: 300px;  height: 300px; margin: 40px auto;
+    width: 300px;  
+    height: 350px; 
+    margin: 40px auto;
+    
 
     text-align: center;
     justify-content: space-around;
