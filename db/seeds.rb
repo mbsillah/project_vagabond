@@ -23,9 +23,30 @@ atlanta = City.create(
 
 portland = City.create(
     name: "Portland",
-    description: "only hipsters allowed.",
+    description: "Portland, Oregon’s largest city, sits on the Columbia and Willamette rivers, in the shadow of snow-capped Mount Hood. It’s known for its parks, bridges and bicycle paths, as well as for its eco-friendliness and its microbreweries and coffeehouses. Hipsters everywhere you turn.",
     population: 639863,
     photo_url: "http://bouchon-portland.com/wp-content/uploads/2017/01/portland-oregon.jpg"
+)
+
+newyork = City.create(
+    name: "New York City",
+    description: "Often called one of, if not the, greatest cities in the world. The Big Apple, The City That Never Sleeps, Gotham: whatever its name, New York City has something for every taste and every traveler.",
+    population: 8538000,
+    photo_url: "https://fortunedotcom.files.wordpress.com/2015/10/stnmtz_20150716_68953.jpg?w=720&quality=85"
+)
+
+bangkok = City.create(
+    name: "Bangkok",
+    description: "Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life.",
+    population: 8281000,
+    photo_url: "http://static.asiawebdirect.com/m/bangkok/portals/bangkok-maps-com/homepage/pagePropertiesImage/bangkok.jpg.jpg"
+)
+
+milan = City.create(
+    name: "Milan",
+    description: "Milan, a metropolis in Italy's northern Lombardy region, is a global capital of fashion and design.",
+    population: 1331000,
+    photo_url: "https://www.flybe.com/cheap-flights/milan/milan-overview-16x9.jpg"
 )
 
 jonathan = User.create(
@@ -59,4 +80,22 @@ portlandPostOne = Post.create(
     title: "Portlandia",
     text: "There's more to our town than a stupid show.",
     city_id: portland.id
+)
+
+bangkokPostOne = Post.create(
+    title: "Visit the Grand Palace",
+    text: "The most famous attraction in the entire city",
+    city_id: bangkok.id
+)
+
+milanPostOne = Post.create(
+    title: "Go to the Duomo",
+    text: "If you only have time to see one sight in Milan, the Duomo should be it.",
+    city_id: milan.id
+)
+
+newyorkPostone = Post.create(
+    title: "Brooklyn Bridge",
+    text: "For some excercise and wonderful views of the city, walk the Brooklyn Bridge.",
+    city_id: newyork.id
 )
