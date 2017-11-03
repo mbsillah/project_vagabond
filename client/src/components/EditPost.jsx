@@ -40,7 +40,7 @@ class EditPost extends Component {
 
         if (this.state.redirectToCityPage) {
             const cityId = this.props.match.params.city_id
-            return <Redirect to={`/ cities/${cityId}`} />
+            return <Redirect to={`/cities/${cityId}`} />
         }
 
         return (
