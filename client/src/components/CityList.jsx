@@ -14,6 +14,10 @@ const CityContainer = FlexRow.extend`
 `
 
 const CityCard = styled.div`
+    &:hover {
+        opacity: .9;
+        font-size: 26px;
+    }
     display: flex;
     flex-direction: column;
     // width: 30%;

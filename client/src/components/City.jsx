@@ -4,7 +4,7 @@ import NewPost from './NewPost'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import ConfirmationAlert from './ConfirmationAlert'
-import { FlexRow } from "../styled-components/FlexContainers";
+import moment from 'moment'
 
 
 const CityImageBanner = styled.div`
@@ -164,6 +164,7 @@ class City extends Component {
                     <PostCard key={post.id}>
                         <h4>{post.title}</h4>
                         <h5>{post.text}</h5>
+                        Posted: {moment(post.created_at).fromNow()}
 
                         <button onClick={this.toggleShowConfirmationAlert}>Delete Post</button>
                         {this.state.showConfirmation ? <ConfirmationAlert deletePost={this.deletePost} toggleShowConfirmationAlert={this.toggleShowConfirmationAlert} id={post.id} /> : null}
