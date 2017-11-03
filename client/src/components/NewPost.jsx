@@ -9,6 +9,7 @@ class NewPost extends Component {
         text: ""
         }
         
+        
     }
 
     handleChange = (event) => {

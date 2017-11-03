@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import ConfirmationAlert from './ConfirmationAlert'
 import moment from 'moment'
-
+import PostCard from './PostCard'
 
 const CityImageBanner = styled.div`
 
@@ -52,32 +52,7 @@ const CityBody = styled.div`
     letter-spacing: 2px;
     padding-top: 25px;
 `
-const PostCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    // width: 30%;
-    font-size: 20px;
-    width: 300px;  
-    height: 350px; 
-    margin: 40px auto;
-    
 
-    text-align: center;
-    justify-content: space-around;
-    float: left;
-    padding: 20px 10px 15px 10px;
-    background: rgba(216, 212, 212, 1);
-    border: 1px solid #fff;
-    -moz-box-shadow: 0px 2px 15px #333;
-    position: relative;
-    -webkit-transform: rotate(${props => props.rotationDegrees}deg);
-    
-    -moz-transform: rotate(-8deg);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-`
 
 
 class City extends Component {
@@ -86,11 +61,8 @@ class City extends Component {
         city: {},
         posts: [],
         showForm: false,
-        showConfirmation: false
+        
     }
-
-
-
 
     async componentWillMount() {
         this.getCitiesAndPosts();
@@ -126,10 +98,6 @@ class City extends Component {
         this.setState({ showForm: !this.state.showForm })
     }
 
-    toggleShowConfirmationAlert = () => {
-        this.setState({showConfirmation: !this.state.showConfirmation})
-    }
-
 
     pushPosts = (newPost) => {
         const newArray = [...this.state.posts]
@@ -137,8 +105,6 @@ class City extends Component {
         this.setState({ posts: newArray })
         this.toggleShowForm()
     }
-
-    // const population = {this.state.city.population}
 
     render() {
 
@@ -161,19 +127,7 @@ class City extends Component {
              </CityText>
               <CityText>
                 {this.state.posts.map(post => (
-                    <PostCard key={post.id}>
-                        <h4>{post.title}</h4>
-                        <h5>{post.text}</h5>
-                        Posted: {moment(post.created_at).fromNow()}
-
-                        <button onClick={this.toggleShowConfirmationAlert}>Delete Post</button>
-                        {this.state.showConfirmation ? <ConfirmationAlert deletePost={this.deletePost} toggleShowConfirmationAlert={this.toggleShowConfirmationAlert} id={post.id} /> : null}
-                                           
-                        <Link to={`/cities/${this.state.city.id}/posts/${post.id}`}>
-                                <button>Edit </button>
-                                </Link>
-                    </PostCard>
-
+                    <PostCard deletePost={this.deletePost} key={post._id} post={post} city={this.state.city}/>
                 ))}
                    </CityText>
                    </div>
