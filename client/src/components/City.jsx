@@ -128,7 +128,7 @@ class City extends Component {
 
     pushPosts = (newPost) => {
         const newArray = [...this.state.posts]
-        newArray.push(newPost)
+        newArray.unshift(newPost)
         this.setState({ posts: newArray })
         this.toggleShowForm()
     }
