@@ -152,7 +152,7 @@ class City extends Component {
                     <PostCard key={post.id}>
                         <h4>{post.title}</h4>
                         <h5>{post.text}</h5>
-                        
+                        {post.created_at}
                         <button onClick={() => this.deletePost(post.id)}>Delete Post </button>
                         <Link to={`/cities/${this.state.city.id}/posts/${post.id}`}>
                                 <button>Edit </button>

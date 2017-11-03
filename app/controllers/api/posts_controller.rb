@@ -1,12 +1,13 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = City.find(params[:city_id]).posts
+        @city = City.include(:posts).order('posts.created_at Desc').find(params[:city_id])
+        @posts = @city.posts
         render json: @posts  
     end
 
     def show
         @post = Post.find(params[:id])
-        render json: @post
+        render json: @post 
     end
 
     def create
