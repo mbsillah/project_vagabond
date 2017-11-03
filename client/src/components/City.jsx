@@ -20,6 +20,7 @@ const CityImageBanner = styled.div `
   `
 
   const CityText = styled.div`
+    text-align: center;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0   6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-top: 0px;
@@ -46,6 +47,29 @@ const CityBody = styled.div `
     text-align: center;
     letter-spacing: 2px;
     padding-top: 25px;
+`
+const PostCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    // width: 30%;
+    font-size: 20px;
+    width: 300px;  height: 300px; margin: 40px auto;
+
+    text-align: center;
+    justify-content: space-around;
+    float: left;
+    padding: 20px 10px 15px 10px;
+    background: rgba(216, 212, 212, 1);
+    border: 1px solid #fff;
+    -moz-box-shadow: 0px 2px 15px #333;
+    position: relative;
+    -webkit-transform: rotate(${props => props.rotationDegrees}deg);
+    
+    -moz-transform: rotate(-8deg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
 `
 
 
@@ -112,25 +136,31 @@ toggleShowForm = () => {
         return (
             <div>
             <CityImageBanner><img src={this.state.city.photo_url} /></CityImageBanner>
+            //about
             <CityBody>
                 <CityText>
                 <CityName>Welcome to {this.state.city.name}</CityName>
                 <div>Population: {this.state.city.population}</div>
                 <div>About: {this.state.city.description}</div>
-                <img src={this.state.city.photo_url} />
-              
+                </CityText>
+            </CityBody>
+            //post stuff
+            <CityText>
+            <button onClick={this.toggleShowForm}>Add New Post</button>
+                {this.state.showForm ? <NewPost pushPosts={this.pushPosts} id={this.props.match.params.id} handleSubmit={this.handleSubmit} /> : null}
+             </CityText>
+              <CityText>
                 {this.state.posts.map(post => (
-                    <div key={post.id}>
+                    <PostCard key={post.id}>
                         <h4>{post.title}</h4>
                         <h5>{post.text}</h5>
                         <button onClick={() => this.deletePost(post.id)}>Delete Post</button>
                         <button>Edit</button>
-                    </div>
+                    </PostCard>
                 ))}
-                <button onClick={this.toggleShowForm}>Add New Post</button>
-                {this.state.showForm ? <NewPost pushPosts={this.pushPosts} id={this.props.match.params.id} handleSubmit={this.handleSubmit} /> : null}
                 </CityText>
-            </CityBody>
+                
+               
             </div>
         );
     }
