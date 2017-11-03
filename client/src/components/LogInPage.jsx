@@ -56,9 +56,9 @@ const UsernameList = styled.div`
 `
 
 const OrCircle = styled.div` 
-  position: absolute;
-  top: 45%;
-  right: 48%;
+
+  position: relative;
+  left: 95%;
   width: 40px;
   height: 40px;
   background-color: #c3cbd8;
@@ -102,13 +102,15 @@ getAllUsers = async () => {
             })}
             </UsernameList>
             </SectionText>
+            <OrCircle>OR</OrCircle>
             </SignInSection>
             <SignUpSection>
             <SectionText>
             <SignUpForm />
             </SectionText>
+         
             </SignUpSection>
-           <OrCircle>OR</OrCircle>
+           
             </LoginContainer>
         );
     }

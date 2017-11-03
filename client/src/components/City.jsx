@@ -3,6 +3,7 @@ import axios from "axios";
 import NewPost from './NewPost'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
+import ConfirmationAlert from './ConfirmationAlert'
 
 const CityImageBanner = styled.div`
 
@@ -79,7 +80,8 @@ class City extends Component {
     state = {
         city: {},
         posts: [],
-        showForm: false
+        showForm: false,
+        showConfirmation: false
     }
 
 
@@ -119,6 +121,11 @@ class City extends Component {
         this.setState({ showForm: !this.state.showForm })
     }
 
+    toggleShowConfirmationAlert = () => {
+        this.setState({showConfirmation: !this.state.showConfirmation})
+    }
+
+
     pushPosts = (newPost) => {
         const newArray = [...this.state.posts]
         newArray.push(newPost)
@@ -134,7 +141,7 @@ class City extends Component {
         return (
             <div>
             <CityImageBanner><img src={this.state.city.photo_url} /></CityImageBanner>
-            //about
+          
             <CityBody>
                 <CityText>
                 <CityName>Welcome to {this.state.city.name}</CityName>
@@ -142,7 +149,7 @@ class City extends Component {
                 <div>About: {this.state.city.description}</div>
                 </CityText>
             </CityBody>
-            //post stuff
+        
             <CityText>
             <button onClick={this.toggleShowForm}>Add New Post </button>
                 {this.state.showForm ? <NewPost pushPosts={this.pushPosts} id={this.props.match.params.id} handleSubmit={this.handleSubmit} /> : null}
@@ -152,8 +159,10 @@ class City extends Component {
                     <PostCard key={post.id}>
                         <h4>{post.title}</h4>
                         <h5>{post.text}</h5>
-                        
-                        <button onClick={() => this.deletePost(post.id)}>Delete Post </button>
+
+                        <button onClick={this.toggleShowConfirmationAlert}>Delete Post</button>
+                        {this.state.showConfirmation ? <ConfirmationAlert deletePost={this.deletePost} toggleShowConfirmationAlert={this.toggleShowConfirmationAlert} id={post.id} /> : null}
+                                           
                         <Link to={`/cities/${this.state.city.id}/posts/${post.id}`}>
                                 <button>Edit </button>
                                 </Link>
