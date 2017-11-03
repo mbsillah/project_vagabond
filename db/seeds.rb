@@ -60,7 +60,7 @@ sanFran = City.create(
     name: "San Fransico",
     description: "San Francisco, in northern California, is a hilly city on the tip of a peninsula surrounded by the Pacific Ocean and San Francisco Bay.",
     population: 864816,
-    photo_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjW8b_u5KLXAhWKOSYKHeqdBzcQjRwIBw&url=http%3A%2F%2Fwww.travelandleisure.com%2Ftravel-guide%2Fsan-francisco&psig=AOvVaw3qov-ui9eLEY2NrPCAE7CI&ust=1509811655720240"
+    photo_url: "https://images1.apartments.com/i2/hFgYoT0zCoCAdiUcUR22kOmdhv7VosGC2AghT5uI12w/110/san-francisco-ca-the-iconic-golden-gate-bridge.jpg"
 )
 
 jonathan = User.create(
