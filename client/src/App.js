@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage"
 import City from "./components/City"
 import LogInPage from "./components/LogInPage"
 import SplashPage from "./components/SplashPage"
+import EditPost from './components/EditPost'
 import { injectGlobal } from 'styled-components'
 
 injectGlobal`
@@ -64,7 +65,7 @@ class App extends Component {
         <Route exact path="/home" render={HomePageComponent} />
         <Route exact path="/cities/:id" component={City} />
         <Route exact path="/login" component={LogInPage} />
-
+        <Route exact path="/cities/:city_id/posts/:id" component={EditPost}/>
       </Switch>
       </div>
       </Router>
