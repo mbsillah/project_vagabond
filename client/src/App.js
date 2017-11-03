@@ -14,24 +14,9 @@ injectGlobal`
   body {
     background-image: url("http://passportinfoguide.com/wp-content/uploads/2013/11/passport.jpg"); 
     background-position: center;
-
     background-size: cover;
     background-attachment: fixed;
 }
-`
-
-const TitleText = styled.div`
-  text-align: center;
-  font-family: 'Ranchers', cursive;  
-  font-size: 28px;
-  width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #bddfeb;
-  opacity: .8;
-  padding: 10px 0px 10px 0px;
-  letter-spacing: 5px;
-  margin-top: 0px;
-  margin-bottom: 10px;
 `
 
 class App extends Component {

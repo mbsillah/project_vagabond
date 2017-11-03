@@ -47,6 +47,9 @@ const CityCard = styled.div`
     a {
         padding-bottom: 10px;
     }
+    a:visited {
+        color: rgb(17, 17, 114);
+    }
 `
 
 
